@@ -1,7 +1,8 @@
 package com.jose.persistance.service;
 
 import com.jose.persistance.data.Delivery;
-import com.jose.persistance.data.DeliveryRepository;
+import com.jose.persistance.repository.DeliveryRepository;
+import com.jose.persistance.repository.RecipientAndPrice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,4 +22,13 @@ public class DeliveryService {
     public List<Delivery> getAllByName(String name) {
         return deliveryRepository.findByName(name);
     }
+
+    public Delivery getById(Long id) {
+        return deliveryRepository.find(id);
+    }
+
+    public RecipientAndPrice getBill(Long deliveryId){
+        return deliveryRepository.getBill(deliveryId);
+    }
+
 }

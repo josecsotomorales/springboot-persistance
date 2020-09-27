@@ -1,6 +1,7 @@
 package com.jose.persistance.api;
 
 import com.jose.persistance.data.Delivery;
+import com.jose.persistance.repository.RecipientAndPrice;
 import com.jose.persistance.service.DeliveryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,8 +19,18 @@ public class DeliveryController {
         return deliveryService.save(delivery);
     }
 
-    @GetMapping(value = "/{name}")
-    public List<Delivery> getAllByName(@PathVariable("name") String name) {
+    @GetMapping
+    public List<Delivery> getAllByName(@RequestParam("name") String name) {
         return deliveryService.getAllByName(name);
+    }
+
+    @GetMapping(value = "/{id}")
+    public Delivery getById(@PathVariable("id") Long id) {
+        return deliveryService.getById(id);
+    }
+
+    @GetMapping("/bill/{deliveryId}")
+    public RecipientAndPrice getBill(@PathVariable Long deliveryId) {
+        return deliveryService.getBill(deliveryId);
     }
 }

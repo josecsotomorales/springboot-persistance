@@ -3,6 +3,7 @@ package com.jose.persistance.api;
 import com.fasterxml.jackson.annotation.JsonView;
 import com.jose.persistance.data.Plant;
 import com.jose.persistance.data.Views;
+import com.jose.persistance.dto.PlantDTO;
 import com.jose.persistance.service.PlantService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

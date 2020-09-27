@@ -1,4 +1,4 @@
-package com.jose.persistance.api;
+package com.jose.persistance.dto;
 
 import java.math.BigDecimal;
 
