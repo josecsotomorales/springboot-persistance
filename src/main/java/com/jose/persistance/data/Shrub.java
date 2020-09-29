@@ -9,6 +9,12 @@ public class Shrub extends Plant {
 
     private int width;
 
+    public Shrub(String name, double price) {
+        super(name, price);
+    }
+
+    public Shrub() { super(); }
+
     /* getters and setters*/
 
     public int getHeight() {

@@ -25,12 +25,18 @@ public class Delivery {
     private String address;
     private LocalDateTime deliveryTime;
     @Type(type = "yes_no")
-    private Boolean completed;
+    private Boolean completed = false;
 
     // make sure to specify mappedBy. Lazy fetch optional,
     // but often a good idea for collection attributes
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "delivery", cascade = CascadeType.ALL)
     private List<Plant> plants;
+
+    public Delivery(String name, String address, LocalDateTime deliveryTime) {
+        this.name = name;
+        this.address = address;
+        this.deliveryTime = deliveryTime;
+    }
 
     /* getters and setters */
 
